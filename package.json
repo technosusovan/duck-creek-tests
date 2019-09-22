@@ -1,9 +1,9 @@
 {
-  "name": "protractor-typescript-cucumber",
-  "version": "4.0.0",
+  "name": "duck-creek-tests",
+  "version": "1.0.0",
   "license": "MIT",
   "description": "To demostrate protractor cucumber tests for angular/non angular apps with allure report framework",
-  "homepage": "https://github.com/igniteram/protractor-cucumber-typescript",
+  "homepage": "https://github.com/technosusovan/duck-creek-tests",
   "keywords": [
     "protractor",
     "cucumber",
@@ -48,5 +48,5 @@
     "typescript": "^3.0.1",
     "authenticator-browser-extension": "^1.1.1"
   },
-  "repository": "https://github.com/igniteram/protractor-cucumber-typescript"
+  "repository": "https://github.com/technosusovan/duck-creek-tests"
 }
