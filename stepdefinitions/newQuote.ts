@@ -35,6 +35,7 @@ When(/^I Select Location State "(.*?)"$/, async (state) => {
 
 When(/^I Click On Run Clearance Button$/, async () => {
     await browser.sleep(3000);
+    browser.executeScript('arguments[0].scrollIntoView()', newQuote.runClearanceButton.getWebElement());
     await newQuote.runClearanceButton.click();
 });
 
