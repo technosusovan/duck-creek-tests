@@ -1,6 +1,6 @@
-import { browser, protractor } from "protractor";
+import { browser, protractor, ElementFinder, element, by } from "protractor";
 import { NewQuotePageObject } from "../pages/newQuotePage";
-const { When} = require("cucumber");
+const { When } = require("cucumber");
 
 const newQuote: NewQuotePageObject = new NewQuotePageObject();
 
@@ -13,7 +13,9 @@ When(/^I Select SearchType "(.*?)"$/, async (searchType) => {
     await browser.sleep(2000);
     await newQuote.searchTypeDropDown.click();
     await browser.sleep(2000);
-    await newQuote.searchTypeDropDownOptions.click();
+    var searchTypeDropDownOptionsXpath = "//li[@role=\'option\' and text()=\'"+searchType+"\']";
+    var searchTypeDropDownOptions  = element(by.xpath(searchTypeDropDownOptionsXpath));
+    await searchTypeDropDownOptions.click();
 });
 
 When(/^I Enter First Name "(.*?)"$/, async (firstName) => {
@@ -28,9 +30,11 @@ When(/^I Enter Last Name "(.*?)"$/, async (lastName) => {
 
 When(/^I Select Location State "(.*?)"$/, async (state) => {
     await browser.sleep(2000);
-    await newQuote.locationStateDropDown.sendKeys((protractor.Key as any).chord(protractor.Key.CONTROL, "a"));
+    await newQuote.locationStateDropDown.click();
     await browser.sleep(2000);
-    await newQuote.locationStateDropDown.sendKeys(state);
+    var locationStateDropDownOptionsXpath = "//li[@role=\'option\' and text()=\'"+state+"\']";
+    var locationStateDropDownOptions  = element(by.xpath(locationStateDropDownOptionsXpath));
+    await locationStateDropDownOptions.click();
 });
 
 When(/^I Click On Run Clearance Button$/, async () => {
