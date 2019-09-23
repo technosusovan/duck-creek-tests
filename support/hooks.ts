@@ -3,6 +3,9 @@ import * as fs from "fs";
 import { browser } from "protractor";
 import { config } from "../config/config";
 
+const {setDefaultTimeout} = require('cucumber');
+setDefaultTimeout(60 * 1000);
+
 BeforeAll({timeout: 100 * 1000}, async () => {
     await browser.get(config.baseUrl);
 });
