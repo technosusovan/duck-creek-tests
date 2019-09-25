@@ -27,7 +27,7 @@
     "add-contributors": "all-contributors add",
     "generate-contributors": "all-contributors generate",
     "test": "protractor typeScript/config/config.js",
-    "selenium": "webdriver-manager update && webdriver-manager start"
+    "selenium": "webdriver-manager update && webdriver-manager start --edge \"C:\\toolbox\\MicrosoftWebDriver.exe\""
   },
   "author": "Susovan Dutta <susovan.dutta@accenture.com>",
   "devDependencies": {

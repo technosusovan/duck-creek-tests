@@ -13,7 +13,9 @@ export const config: Config = {
     baseUrl: "http://MOWS1270X.eastus2.cloudapp.azure.com/Express_Instance_17R2/default.aspx",
 
     capabilities: {
-        browserName: "chrome",
+        browserName: "MicrosoftEdge",
+        elementScrollBehavior: 1,
+        nativeEvents: false
     },
 
     framework: "custom",
