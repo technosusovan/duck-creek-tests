@@ -13,9 +13,7 @@ export const config: Config = {
     baseUrl: "http://MOWS1270X.eastus2.cloudapp.azure.com/Express_Instance_17R2/default.aspx",
 
     capabilities: {
-        browserName: "MicrosoftEdge",
-        elementScrollBehavior: 1,
-        nativeEvents: false
+        browserName: "chrome"
     },
 
     framework: "custom",
@@ -36,10 +34,11 @@ export const config: Config = {
         format: "json:./reports/json/cucumber_report.json",
         require: ["../../typeScript/stepdefinitions/*.js", "../../typeScript/support/*.js"],
         strict: true,
-        tags: "@CucumberScenario",
+        tags: "@CucumberScenarioOutline",
     },
 
     onComplete: () => {
         Reporter.createHTMLReport();
+        browser.close();
     },
 };

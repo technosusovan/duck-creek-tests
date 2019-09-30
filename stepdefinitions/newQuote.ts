@@ -6,7 +6,11 @@ const newQuote: NewQuotePageObject = new NewQuotePageObject();
 
 When(/^I Select PartyType "(.*?)"$/, async (partyType) => {
     await browser.sleep(2000);
-    await newQuote.partyTypeDropDown.sendKeys(partyType);
+    await newQuote.partyTypeDropDown.click();
+    await browser.sleep(2000);
+    var partyTypeDropDownOptionsXpath = "//li[@role=\'option\' and text()=\'"+partyType+"\']";
+    var partyTypeDropDownOptions  = element(by.xpath(partyTypeDropDownOptionsXpath));
+    await partyTypeDropDownOptions.click();
 });
 
 When(/^I Select SearchType "(.*?)"$/, async (searchType) => {
